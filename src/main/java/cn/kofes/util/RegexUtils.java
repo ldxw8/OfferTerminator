@@ -4,7 +4,7 @@ package cn.kofes.util;
  * author: Kofe
  * blog  : https://www.kofes.cn
  * time  : 2019/08/30
- * desc :
+ * desc  :
  * Java 正则表达式参考：https://www.runoob.com/java/java-regular-expressions.html
  */
 public class RegexUtils {
