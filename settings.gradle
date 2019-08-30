@@ -1,0 +1,4 @@
+rootProject.name = 'OfferTerminator'
+include 'JzOffer-67-Str2Int'
+include 'JzOffer-20-NumericString'
+
