@@ -3,7 +3,7 @@ package cn.kofes.code;
 /**
  * <pre>
  * author: Kofe
- * blog  : http://kofes.cn
+ * blog  : https://www.kofes.cn
  * time  : 2019/08/30
  * desc :
  * ==============================================
@@ -18,7 +18,7 @@ package cn.kofes.code;
 public class Str2Int {
 
     // 通用数值字符识别- 整型/浮点型，如：".5","1.", "1.0", "10", "-123", "-12.5", "-5." 和 "-.14"
-    final static  public String REGEX_DIGITAL_DECIMAL = "[+|-]?[0-9]*[.]?[0-9]*";
+    final static public String REGEX_DIGITAL_DECIMAL = "[+|-]?[0-9]*[.]?[0-9]*";
 
     private Boolean isValidDigitalStr = true;
 
