@@ -17,3 +17,6 @@ Output: 2 or 3
 数组, 排序, 查找
 
 ## 解题思路
+
+## 优秀方案
+- [CyC2018. CS-Notes-剑指Offer题解-数组中重复的数字. github.com](https://github.com/CyC2018/CS-Notes/blob/master/notes/剑指%20Offer%20题解%20-%203~9.md#3-数组中重复的数字)
