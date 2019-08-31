@@ -18,9 +18,9 @@ package cn.kofes.code;
  */
 public class NumericString {
 
-    // 通用数值字符识别- 科学计数法，如："5e2","0.1e2", ".5e2", "-.5e10", "10E+10" 和 "-1E-16"
+    // 通用数值字符识别- 科学计数法。如："5e2","0.1e2", ".5e2", "-.5e10", "10E+10" 和 "-1E-16"
     final static public String REGEX_DIGITAL_SCIENTIFIC = "[+|-]?[0-9]*[.]?[0-9]*[e|E]{1}[+|-]?[0-9]+";
-    // 通用数值字符识别- 整型/浮点型，如：".5","1.", "1.0", "10", "-123", "-12.5", "-5." 和 "-.14"
+    // 通用数值字符识别- 整型/浮点型。如：".5","1.", "1.0", "10", "-123", "-12.5", "-5." 和 "-.14"
     final static public String REGEX_DIGITAL_DECIMAL = "[+|-]?[0-9]*[.]?[0-9]*";
 
     public static boolean isNumeric(char[] str) {
