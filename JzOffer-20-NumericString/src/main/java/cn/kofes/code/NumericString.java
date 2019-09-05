@@ -23,6 +23,11 @@ public class NumericString {
     // 通用数值字符识别- 整型/浮点型。如：".5","1.", "1.0", "10", "-123", "-12.5", "-5." 和 "-.14"
     final static public String REGEX_DIGITAL_DECIMAL = "[+|-]?[0-9]*[.]?[0-9]*";
 
+    /**
+     * 判断字符串是否表示数值 (包括整数和小数)
+     * @param str 表示数值的字符串
+     * @return True 表示该字符串可以表示数值; False 其他情况
+     */
     public static boolean isNumeric(char[] str) {
 
         boolean isNumeric = false;
