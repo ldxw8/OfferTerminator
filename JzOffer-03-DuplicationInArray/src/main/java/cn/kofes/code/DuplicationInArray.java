@@ -116,7 +116,7 @@ public class DuplicationInArray {
                             if ( hashTable[hKey] == numbers[i] ) {
                                 duplication[0] = numbers[i];
                                 isDuplicate = true;
-                                break;
+                                break; // 跳出最临近的循环体 -- while
                             }
 
                             rhKey = d^2;
