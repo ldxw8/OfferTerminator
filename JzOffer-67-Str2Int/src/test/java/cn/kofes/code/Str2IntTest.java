@@ -18,5 +18,7 @@ public class Str2IntTest {
         Assert.assertEquals(str2Int.convertStr2Integer("1234567890"), 1234567890);
         Assert.assertEquals(str2Int.convertStr2Integer("+1234567890"), 1234567890);
         Assert.assertEquals(str2Int.convertStr2Integer("-1234567890"), -1234567890);
+        Assert.assertEquals(str2Int.convertStr2Integer("+2147483647"), 2147483647);
+        Assert.assertEquals(str2Int.convertStr2Integer("-2147483648"), -2147483648);
     }
 }

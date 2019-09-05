@@ -1,5 +1,7 @@
 package cn.kofes.code;
 
+import org.omg.PortableInterceptor.INACTIVE;
+
 /**
  * <pre>
  * author: Kofe
@@ -22,6 +24,11 @@ public class Str2Int {
 
     private Boolean isValidDigitalStr = true;
 
+    /**
+     * 把字符串转换成整数
+     * @param src 表示整数的字符串
+     * @return 返回整数
+     */
     public int convertStr2Integer(String src) {
 
         int result = 0;
@@ -38,16 +45,16 @@ public class Str2Int {
                 for (int i = src_array.length - 1, j = 0; i >= 0; i--, j++) {
                     // 从个位数开始，累加计算得结果
                     if ('0' <= src_array[i] && '9' >= src_array[i]) {
-                        result += (src_array[i] - '0') * Math.pow(10, j);
-                    } else {
                         // 遇到符号进行转换
-                        if (0 == i && '-' == src_array[0]) {
-                            result *= -1;
+                        if (  '-' == src_array[0] ) {
+                            result -= (src_array[i] - '0') * Math.pow(10, j);
+                        } else {
+                            result += (src_array[i] - '0') * Math.pow(10, j);
                         }
                     }
 
                     // 溢出判别：缺少类型大小的判断
-                    if (Integer.MIN_VALUE <= result && result >= Integer.MAX_VALUE) {
+                    if (Integer.MIN_VALUE < result && result > Integer.MAX_VALUE) {
                         result = 0;
                         setValidDigitalStr(false);
                     }
