@@ -142,12 +142,6 @@ public class DuplicationInArray {
 
     // 交换数组中两位置的数值 (位运算)
     private static void swap(int[] numbers, int i, int j) {
-
-        //                            int tmp = numbers[i];
-//                            numbers[i] = numbers[i] ^ numbers[tmp];
-//                            numbers[tmp] = numbers[i] ^ numbers[tmp];
-//                            numbers[i] = numbers[i] ^ numbers[tmp];
-
         numbers[i] = numbers[i] ^ numbers[j];
         numbers[j] = numbers[i] ^ numbers[j];
         numbers[i] = numbers[i] ^ numbers[j];
