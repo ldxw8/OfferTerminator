@@ -9,17 +9,17 @@ package cn.kofes.struct;
 public class SortAlgorithmUtils {
 
     /**
-     * 比较两数值的大小 ( i>j 小于零；i==j 等于零；i>j 大于零 )
+     * 比较两整数的大小
      * @param i
      * @param j
-     * @return i 返回 (i-j) 的差值
+     * @return i 返回 (i-j) 的差值 ( i>j 小于零；i==j 等于零；i>j 大于零 )
      */
     public static int compare(int i, int j) {
         return (i-j);
     }
 
     /**
-     * 交换数组中两位置的数值 (位运算), 即位置 1 与 2 的数字呼唤
+     * 交换整型数组中两位置的数值 (位运算), 即位置 1 与 2 的数字呼唤
      * @param numbers 交换数值的目标数组
      * @param i 位置 1
      * @param j 位置 2
@@ -33,7 +33,7 @@ public class SortAlgorithmUtils {
     /**
      * @param x
      * @param y
-     * @return 选出 x, y 中的最大值
+     * @return 选出整数 x, y 中的最大值
      */
     private static int max(int x, int y){
             return  x | y;
@@ -42,7 +42,7 @@ public class SortAlgorithmUtils {
     /**
      * @param x
      * @param y
-     * @return 选出 x, y 中的最小值
+     * @return 选出整数 x, y 中的最小值
      */
     private static int min(int x, int y){
         return  x & y;
