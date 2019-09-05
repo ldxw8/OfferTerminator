@@ -45,6 +45,9 @@ public class DuplicationInArray {
 
                 if (isAllPositive) {
                     for (int i = 0; i < numbers.length; i++) {
+
+                        if (isDuplicate) break; // 跳出最临近的循环体 -- for
+
                         while (numbers[i] != i) {
                             if (numbers[i] == numbers[numbers[i]]) {
                                 duplication[0] = numbers[i];
@@ -52,19 +55,9 @@ public class DuplicationInArray {
                                 break; // 跳出最临近的循环体 -- while
                             }
 
-                            // 位运算：swap(numbers[i], numbers[numbers[i]]);
-                            int tmp = numbers[i];
-                            numbers[i] = numbers[i] ^ numbers[tmp];
-                            numbers[tmp] = numbers[i] ^ numbers[tmp];
-                            numbers[i] = numbers[i] ^ numbers[tmp];
+                            swap(numbers, i, numbers[i]);
 
-                            // 中间变量交换两值
-                            // int tmp = numbers[numbers[i]];
-                            // numbers[numbers[i]] = numbers[i];
-                            // numbers[i] = tmp;
                         }
-
-                        if (isDuplicate) break; // 跳出最临近的循环体 -- for
                     }
                 }
 
@@ -90,7 +83,6 @@ public class DuplicationInArray {
         // 构建一个哈希表，利用冲突的特点，结合重复元素判定的方式，快速找出
         int[] hashTable = new int[length];
 
-
         if (null != numbers && null != duplication) {
             if (length == numbers.length) {
 
@@ -107,6 +99,8 @@ public class DuplicationInArray {
 
                 if (isAllPositive) {
                     for (int i = 0, d = 1, f = 1; i < numbers.length; i++) {
+
+                        if (isDuplicate) break; // 跳出最临近的循环体 -- for
 
                         // 哈希函数
                         int hKey = numbers[i] % length;
@@ -137,8 +131,6 @@ public class DuplicationInArray {
                         }
 
                         hashTable[hKey] = numbers[i];
-
-                        if (isDuplicate) break; // 跳出最临近的循环体 -- for
                     }
                 }
             }
@@ -146,6 +138,19 @@ public class DuplicationInArray {
 
 
         return isDuplicate;
+    }
+
+    // 交换数组中两位置的数值 (位运算)
+    private static void swap(int[] numbers, int i, int j) {
+
+        //                            int tmp = numbers[i];
+//                            numbers[i] = numbers[i] ^ numbers[tmp];
+//                            numbers[tmp] = numbers[i] ^ numbers[tmp];
+//                            numbers[i] = numbers[i] ^ numbers[tmp];
+
+        numbers[i] = numbers[i] ^ numbers[j];
+        numbers[j] = numbers[i] ^ numbers[j];
+        numbers[i] = numbers[i] ^ numbers[j];
     }
 
 }
