@@ -102,6 +102,9 @@ public class DuplicationInArray {
 
                         if (isDuplicate) break; // 跳出最临近的循环体 -- for
 
+                        // FIXME 关于哈希函数中 length 的应为小于等于表长的一个素数
+                        // FIXME d^2 = 1, -1, 4, -4, 9, -9, ... 且 d <= length / 2，如果保证探针继续前行?
+
                         // 哈希函数
                         int hKey = numbers[i] % length;
                         int rhKey = 0;
@@ -116,14 +119,14 @@ public class DuplicationInArray {
                                 break; // 跳出最临近的循环体 -- while
                             }
 
-                            rhKey = d ^ 2;
-                            rhKey *= f;
+                            rhKey = d * d;
+                            // rhKey *= f;
 
                             // 信号量改变
                             if (d <= length / 2) {
                                 d += 1;
                             }
-                            f *= -1;
+                            // f *= -1;
 
                             // 计算探测的地址序列
                             hKey = (hKey + rhKey * d) % length;
