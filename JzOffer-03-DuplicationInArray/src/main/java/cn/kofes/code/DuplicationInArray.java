@@ -133,6 +133,11 @@ public class DuplicationInArray {
 
                         }
 
+                        // TODO 重构哈希查找
+                        // 1. 接口：hashQuery(int[] hashTable, int hashSize, int conflict)
+                        // 2. 选最近的素数 hashSize < hashTable.length
+                        // 3. 解决冲突方案 conflict ( 直接地址法、平方探测法、双散列、再散列 )
+
                         hashTable[hKey] = numbers[i];
                     }
                 }
