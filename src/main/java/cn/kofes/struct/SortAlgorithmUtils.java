@@ -4,7 +4,7 @@ package cn.kofes.struct;
  * author: Kofe
  * blog : https://www.kofes.cn
  * time : 2019/09/05
- * desc: 收集内部排序的相关算法
+ * desc: 收集排序算法需要用到的通用函数
  */
 public class SortAlgorithmUtils {
 
