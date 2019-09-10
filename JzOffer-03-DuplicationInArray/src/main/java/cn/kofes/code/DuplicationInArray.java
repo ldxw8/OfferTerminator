@@ -101,7 +101,6 @@ public class DuplicationInArray {
 
                     // 处理冲突 ( 二次探测再散列 )
                     while (-1 != hashTable[ hcKey = hashSearch.getHashKeyWithMod(numbers[i] + dSum, hashSize) ] && d <= hashSize / 2) {
-
                         // 发生了冲突，检验冲突位置是否是相同元素
                         if (hashTable[hcKey] == numbers[i]) {
                             duplication[0] = numbers[i];
@@ -117,8 +116,6 @@ public class DuplicationInArray {
                     hashTable[hcKey] = numbers[i];
                 }
             }
-
-            hashTable.toString();
         }
 
         return isDuplicate;
