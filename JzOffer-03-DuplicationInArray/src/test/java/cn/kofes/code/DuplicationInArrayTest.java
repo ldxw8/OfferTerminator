@@ -48,9 +48,9 @@ public class DuplicationInArrayTest {
         Assert.assertEquals( DuplicationInArray.duplicateWithHash(null, 10, null), false);
         Assert.assertEquals( result[0], -1);
 
-        int[]  arrays1 = {1, 2, -1, 5, 10, 4, 2, 3};
-        Assert.assertEquals( DuplicationInArray.duplicateWithHash(arrays1, arrays1.length, result), false);
-        Assert.assertEquals( result[0], -1);
+        int[]  arrays1 = {1, 2, -5, 5, 10, 4, 2, 3};
+        Assert.assertEquals( DuplicationInArray.duplicateWithHash(arrays1, arrays1.length, result), true);
+        Assert.assertEquals( result[0], 2);
 
         int[]  arrays2 = {2,4,8,1,4,3, 6, 2, 4};
         Assert.assertEquals( DuplicationInArray.duplicateWithHash(arrays2, arrays2.length, result), true);

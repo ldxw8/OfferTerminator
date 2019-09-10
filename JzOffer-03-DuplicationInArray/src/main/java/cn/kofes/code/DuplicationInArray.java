@@ -90,13 +90,8 @@ public class DuplicationInArray {
 
             // 初始化 HashTable
             int[] hashTable = new int[hashSize];
-            for (int i = 0, d = 1; i < numbers.length; i++) {
+            for (int i = 0, d = 1; i < hashTable.length; i++) {
                 hashTable[i] = -1;
-                // 检索输入的数组中是非都为正整数
-                if (numbers[i] < 0) {
-                    isAllPositive = false;
-                    break;
-                }
             }
 
             if (isAllPositive) {
@@ -122,6 +117,8 @@ public class DuplicationInArray {
                     hashTable[hcKey] = numbers[i];
                 }
             }
+
+            hashTable.toString();
         }
 
         return isDuplicate;
