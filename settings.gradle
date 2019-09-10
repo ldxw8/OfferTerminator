@@ -2,4 +2,6 @@ rootProject.name = 'OfferTerminator'
 include 'JzOffer-67-Str2Int'
 include 'JzOffer-20-NumericString'
 include 'JzOffer-03-DuplicationInArray'
+include 'Bilibili-31-Sample'
+include 'Bilibili-910-AndroidDeveloper'
 
