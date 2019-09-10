@@ -80,70 +80,49 @@ public class DuplicationInArray {
 
         boolean isDuplicate = false;
         boolean isAllPositive = true;
-        // 构建一个哈希表，利用冲突的特点，结合重复元素判定的方式，快速找出
-        int[] hashTable = new int[length];
+
+        // 若 hashSize 不为素数，则自动扩容为素数单位的哈希表
+        HashSearch hashSearch = new HashSearch();
+        length = (hashSearch.isPrimeNumber(length)) ?
+                length : hashSearch.getProximalPrimeNumber(length);
 
         if (null != numbers && null != duplication) {
-            if (length == numbers.length) {
 
+            // 初始化 HashTable
+            int[] hashTable = new int[length];
+            for (int i = 0, d = 1; i < numbers.length; i++) {
+                hashTable[i] = -1;
                 // 检索输入的数组中是非都为正整数
-                for (int i = 0, d = 1; i < numbers.length; i++) {
-
-                    hashTable[i] = -1; // 初始化 HashTable
-
-                    if (numbers[i] < 0) {
-                        isAllPositive = false;
-                        break;
-                    }
+                if (numbers[i] < 0) {
+                    isAllPositive = false;
+                    break;
                 }
+            }
 
-                if (isAllPositive) {
-                    for (int i = 0, d = 1, f = 1; i < numbers.length; i++) {
+            if (isAllPositive) {
+                for (int i = 0, d = 0, dSum = 0, flag = -1, hcKey = 0; i < numbers.length; i++) {
 
-                        if (isDuplicate) break; // 跳出最临近的循环体 -- for
+                    if (isDuplicate) break; // 跳出最临近的循环体 -- for
 
-                        // FIXME 关于哈希函数中 length 的应为小于等于表长的一个素数
-                        // FIXME d^2 = 1, -1, 4, -4, 9, -9, ... 且 d <= length / 2，如果保证探针继续前行?
+                    // 处理冲突 ( 二次探测再散列 )
+                    while (-1 != hashTable[ hcKey = hashSearch.getHashKeyWithMod(numbers[i] + dSum, length) ] && d <= length / 2) {
 
-                        // 哈希函数
-                        int hKey = numbers[i] % length;
-                        int rhKey = 0;
-
-                        // 解决冲突 -- 双哈希函数探测法
-                        while (-1 != hashTable[hKey]) {
-
-                            // 发生了冲突，检验冲突位置是否是相同元素
-                            if (hashTable[hKey] == numbers[i]) {
-                                duplication[0] = numbers[i];
-                                isDuplicate = true;
-                                break; // 跳出最临近的循环体 -- while
-                            }
-
-                            rhKey = d * d;
-                            // rhKey *= f;
-
-                            // 信号量改变
-                            if (d <= length / 2) {
-                                d += 1;
-                            }
-                            // f *= -1;
-
-                            // 计算探测的地址序列
-                            hKey = (hKey + rhKey * d) % length;
-
+                        // 发生了冲突，检验冲突位置是否是相同元素
+                        if (hashTable[hcKey] == numbers[i]) {
+                            duplication[0] = numbers[i];
+                            isDuplicate = true;
+                            break; // 跳出最临近的循环体 -- while
                         }
 
-                        // TODO 重构哈希查找
-                        // 1. 接口：hashQuery(int[] hashTable, int hashSize, int conflict)
-                        // 2. 选最近的素数 hashSize < hashTable.length
-                        // 3. 解决冲突方案 conflict ( 直接地址法、平方探测法、双散列、再散列 )
-
-                        hashTable[hKey] = numbers[i];
+                        if (flag < 0) d += 1;
+                        dSum = flag * d;
+                        flag = -flag;
                     }
+
+                    hashTable[hcKey] = numbers[i];
                 }
             }
         }
-
 
         return isDuplicate;
     }
