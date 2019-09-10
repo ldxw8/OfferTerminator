@@ -45,7 +45,6 @@ public class DuplicationInArray {
 
                 if (isAllPositive) {
                     for (int i = 0; i < numbers.length; i++) {
-
                         if (isDuplicate) break; // 跳出最临近的循环体 -- for
 
                         while (numbers[i] != i) {
@@ -54,13 +53,10 @@ public class DuplicationInArray {
                                 isDuplicate = true;
                                 break; // 跳出最临近的循环体 -- while
                             }
-
                             swap(numbers, i, numbers[i]);
-
                         }
                     }
                 }
-
             }
         }
 
@@ -79,7 +75,7 @@ public class DuplicationInArray {
     public static boolean duplicateWithHash(int numbers[], int length, int[] duplication) {
 
         boolean isDuplicate = false;
-        boolean isAllPositive = true;
+        boolean isAllPositive = true;   // 控制全为正整数的开关 (暂时取消)
 
         // 若 hashSize 不为素数，则自动扩容为素数单位的哈希表
         HashSearch hashSearch = new HashSearch();
@@ -90,7 +86,7 @@ public class DuplicationInArray {
 
             // 初始化 HashTable
             int[] hashTable = new int[hashSize];
-            for (int i = 0, d = 1; i < hashTable.length; i++) {
+            for (int i = 0; i < hashTable.length; i++) {
                 hashTable[i] = -1;
             }
 
