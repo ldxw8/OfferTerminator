@@ -83,13 +83,13 @@ public class DuplicationInArray {
 
         // 若 hashSize 不为素数，则自动扩容为素数单位的哈希表
         HashSearch hashSearch = new HashSearch();
-        length = (hashSearch.isPrimeNumber(length)) ?
+        int hashSize = (hashSearch.isPrimeNumber(length)) ?
                 length : hashSearch.getProximalPrimeNumber(length);
 
         if (null != numbers && null != duplication) {
 
             // 初始化 HashTable
-            int[] hashTable = new int[length];
+            int[] hashTable = new int[hashSize];
             for (int i = 0, d = 1; i < numbers.length; i++) {
                 hashTable[i] = -1;
                 // 检索输入的数组中是非都为正整数
@@ -105,7 +105,7 @@ public class DuplicationInArray {
                     if (isDuplicate) break; // 跳出最临近的循环体 -- for
 
                     // 处理冲突 ( 二次探测再散列 )
-                    while (-1 != hashTable[ hcKey = hashSearch.getHashKeyWithMod(numbers[i] + dSum, length) ] && d <= length / 2) {
+                    while (-1 != hashTable[ hcKey = hashSearch.getHashKeyWithMod(numbers[i] + dSum, hashSize) ] && d <= hashSize / 2) {
 
                         // 发生了冲突，检验冲突位置是否是相同元素
                         if (hashTable[hcKey] == numbers[i]) {
