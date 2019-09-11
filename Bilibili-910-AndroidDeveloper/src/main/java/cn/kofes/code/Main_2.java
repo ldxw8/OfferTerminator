@@ -58,10 +58,10 @@ public class Main_2 {
     }
 
     /**
-     * 检索两字符数组是否有包含或者相等关系
+     * 检索两字符是否有包含或者相等关系
      * @param former 表示长度较大的字符数组
      * @param latter 长度较小的字符数组
-     * @return 若 former 和 latter 有包含或者相等关系，返回 True；其他  False
+     * @return 若两字符有包含或者相等关系，返回 True；其他 False
      */
     public static boolean isEqualCharArray(char[] former, char[] latter) {
         boolean result = false;
