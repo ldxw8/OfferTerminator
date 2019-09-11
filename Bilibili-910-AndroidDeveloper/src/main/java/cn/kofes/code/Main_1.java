@@ -30,7 +30,7 @@ public class Main_1 {
 
         if ( null != str && !"".equals(str) ) {
            if ( str.matches(regex) ) {
-               System.out.printf( getMaxSquenceStr(str) );
+               System.out.printf( getMaxSequenceStr(str) );
            } else {
                System.out.printf("");
            }
@@ -38,7 +38,7 @@ public class Main_1 {
 
     }
 
-    public static String getMaxSquenceStr(String src) {
+    public static String getMaxSequenceStr(String src) {
 
         char[]  tmp = src.toCharArray();
         int posStart = 0, posEnd =0, max  = 1;
