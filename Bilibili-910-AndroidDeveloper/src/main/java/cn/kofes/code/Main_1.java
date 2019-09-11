@@ -48,7 +48,7 @@ public class Main_1 {
 
         for (int i = 0;i < tmp.length-1; i++) {
             if (swi) {
-                // 首次比较分支
+                /* 首次比较分支 */
                 if (0 == tmp[i + 1] - tmp[i]) {
                     if ( swi_sub ) {
                         posStart = i;
@@ -60,6 +60,7 @@ public class Main_1 {
                 }
                 max = posEnd - posStart + 1;
             } else {
+                /* 后面用于比较分支 */
                 if (0 == tmp[i + 1] - tmp[i]) {
                     if ( swi_sub_1 ) {
                         posStart_1 = i;
@@ -74,8 +75,6 @@ public class Main_1 {
                         max = max_1;    // 检索到新的最大子串
                         posStart = posStart_1; // 新的最大子串的起始坐标
                         posEnd = posEnd_1; // 新的最大子串的结束坐标
-                        // swi = true;         // 最大子串分支锁
-                        // swi_sub = true; // 启始坐标锁
                     }
 
                     swi_sub_1 = true; // 启始坐标锁
