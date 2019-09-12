@@ -17,6 +17,8 @@ public class SortAlgorithmUtils {
      * @return i 返回 (i-j) 的差值 ( i>j 小于零；i==j 等于零；i>j 大于零 )
      */
     public static int compare(int i, int j) {
+        // a-b>0 不等价于 a>b
+        // 因为 a-b>0 会被 int 溢出影响，a>b 不会受 int 溢出影响。
         return (i-j);
     }
 
