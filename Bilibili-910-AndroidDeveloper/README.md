@@ -8,7 +8,7 @@
 
 	```
 	Input: 
-	AAABBBCDDAAAAAACDs
+	AAABBBCDDAAAAAACD
 	Output: AAAAAA
 	```
 	> 变形题目：[牛客网. 字符串中找出连续最长的数字串](https://www.nowcoder.com/questionTerminal/bd891093881d4ddf9e56e7cc8416562d)
