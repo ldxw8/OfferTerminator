@@ -23,6 +23,7 @@ import java.util.Scanner;
  * </pre>
  */
 public class Main_1 {
+    // static 关键字声明是为了便于单元测试
     public static void main(String[] args) {
         Scanner scanner = new Scanner( System.in );
         String str = scanner.nextLine();
