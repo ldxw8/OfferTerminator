@@ -23,4 +23,11 @@ public class SortAlgorithmUtilsTest {
         Assert.assertEquals(SortAlgorithmUtils.min(-12, 34), -12);
     }
 
+    @Test
+    public void isOdd() {
+        Assert.assertEquals(SortAlgorithmUtils.isOdd(1), true);
+        Assert.assertEquals(SortAlgorithmUtils.isOdd(2), false);
+        Assert.assertEquals(SortAlgorithmUtils.isOdd(5), true);
+        Assert.assertEquals(SortAlgorithmUtils.isOdd(12), false);
+    }
 }
