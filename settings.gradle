@@ -5,4 +5,6 @@ include 'JzOffer-03-DuplicationInArray'
 include 'Bilibili-31-Sample'
 include 'Bilibili-910-AndroidDeveloper'
 include 'Huawei-911-CommonSoftwareDeveloper'
+include 'Tecent-920-AndroidDeveloper'
+include 'Netease-921-RDDeveloper'
 

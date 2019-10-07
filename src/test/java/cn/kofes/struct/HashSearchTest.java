@@ -32,7 +32,7 @@ public class HashSearchTest {
 
     @Test
     public void HashSearch() {
-        int[] arrays = new int[]{1, 2, 3, 2, 4, 5, 2, 2, 9, 0, 5, 8, 2, 19, 0};
+        int[] arrays = new int[]{1, 2, 3, 2, 4, 5, 2, 2, 9, 0, 5, 8, 2, 19, 0, 3, 4, 2, 0, 1, 1, 4, 3};
         HashSearch  hashSearch = new HashSearch(arrays,  arrays.length, 1);
         hashSearch.printHashTable();
     }
