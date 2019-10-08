@@ -23,6 +23,48 @@
 	Output:
 	(1,2)(3,4)(5,6)
 	```
+	
+#### 解题思路
+- 题目的特殊性在于输入集是字符串形式键入的，如：A={1,3,5},B={2,4,6},R=1 。人的角度阅读很容易理解，以 A、B、R 三个变量存储信息。但计算机程序理解的方式，则我们需要进行字符串处理。
+	- Step.01: 去掉基本承载变量的变量名、赋值符号以及 `{` (考虑空格情况)；
+
+		> 例如："A={1,3,5},B={2,4,6},R=1" -> "1,3,5},2,4,6},1" -> {"1,3,5", "2,4,6", "1"}
+		
+	- Step.02: 剩余 "}," 作为分割符来获取 A, B, R 的变量集；
+
+		```java
+		public static String[] getStrVarables(String str) {
+		    // Step.01: 去掉基本承载变量的变量名、赋值符号以及 "{"
+		    String regex = "([A-Z|a-z]+[ ]*[=][ ]*[\\{]?)";
+		    String tmp = str.trim().replaceAll(regex, "");
+		
+		    // Step.02: 剩余 "}," 作为分割符来获取 A, B, R 的变量集
+		    String regex_split = "[}]{1}[ ]*[\\,]{1}";
+		
+		    return tmp.split(regex_split);
+		}
+		```
+		
+	- Step.03：标准化变量集，即形成整型，再以数组储存起来。
+
+		> 例如: 3,4,5 --> {3, 4, 5}
+		
+		```java
+		public static List<Integer> getIntVarables(String str) {
+
+		    String regex = "[ ]*[\\,]+[ ]*";
+		    String[] tmp = str.split(regex);
+
+		    List<Integer> list = new ArrayList<>();
+		    for (int i = 0; i < tmp.length; i++) {
+		        list.add( Integer.parseInt(tmp[i].trim()) );
+		    }
+
+		    return list;
+		}
+		```
+
+- 获取了程序能理解、直接操作的整型输入集后，根据题意实现算法。
 
 ### 题目二
 #### 题目描述
