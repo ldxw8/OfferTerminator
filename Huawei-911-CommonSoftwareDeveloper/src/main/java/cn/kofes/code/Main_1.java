@@ -29,6 +29,7 @@ public class Main_1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner( System.in );
 
+        // 测试用例：
         // A={1,3,5}, B={2,4,6},R=1
         // A ={ 1,3 , 5 } , B= { 2,4 , 6 } ,R = 1
         // A ={ 1,3 , 5,7 } , B= { 2,4 , 6,10 } ,R = 1
@@ -55,7 +56,6 @@ public class Main_1 {
         Boolean swi  = false;
 
         for (int i = 0; i < list[0].size(); i++) { // A
-
             for (int j = 0; j < list[1].size(); j++) { // B
                 if ( list[1].get(j) >= list[0].get(i)  ) { // Bj <= Ai
                     if ( (list[1].get(j) - list[0].get(i)) <= R ) {
