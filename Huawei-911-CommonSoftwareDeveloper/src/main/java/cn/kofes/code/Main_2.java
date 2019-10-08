@@ -3,7 +3,18 @@ package cn.kofes.code;
 import java.util.Scanner;
 
 /**
+ * <pre>
+ * author: Kofe
+ * blog  : https://www.kofes.cn
+ * time  : 2019/09/11
+ * desc  :
+ * ==============================================
+ * 华为 2020 届校园招聘 -- 软件题 -- 编程 2
  * 通过 100% 的测试用例
+ * ==============================================
+ * 题目描述：对数字，字符，字符串以及数字与字符串组合进行倒序排序。
+ * ==============================================
+ * </pre>
  */
 public class Main_2 {
     public static void main(String[] args) {
