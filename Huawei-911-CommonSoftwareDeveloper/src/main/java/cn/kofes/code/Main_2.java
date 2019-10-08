@@ -18,14 +18,14 @@ import java.util.Scanner;
  */
 public class Main_2 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner( System.in );
+        Scanner scanner = new Scanner(System.in);
 
         // String input = "I am an 20-years  out--standing @ * - stu- dent";
         String input = scanner.nextLine();
         String[] words = null;
 
-        if ( null != input) {
-            if ( !"".equals(input) ) {
+        if (null != input) {
+            if (!"".equals(input)) {
                 input = wash2StandardStr(input);
                 words = input.split("( )+");
                 printDescWordList(words);
@@ -53,9 +53,9 @@ public class Main_2 {
         return str2;
     }
 
-    public static void printDescWordList(String[]  src) {
-        for (int i = src.length-1; i >= 0 ; i--) {
-            if ( i > 0 ) {
+    public static void printDescWordList(String[] src) {
+        for (int i = src.length - 1; i >= 0; i--) {
+            if (i > 0) {
                 System.out.print(src[i] + " ");
             } else {
                 System.out.print(src[i]);

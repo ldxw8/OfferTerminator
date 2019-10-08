@@ -21,13 +21,13 @@ import java.util.*;
 public class Main_3 {
     public static void main(String[] args) throws Exception {
 
-        Scanner scanner = new Scanner( System.in );
+        Scanner scanner = new Scanner(System.in);
 
         if (null != scanner) {
 
             /* 原始航班表 */
 
-            int N = Integer.parseInt( scanner.next() );
+            int N = Integer.parseInt(scanner.next());
             Map<String, String> firstMap = new LinkedHashMap<String, String>(N);
             for (int i = 0; i < N; i++) {
                 // Sample: CZ7132,A1,ZHANGSAN
@@ -35,15 +35,15 @@ public class Main_3 {
 
                 // 组合航班号与座位号作为唯一 ID
                 // "航班号,座位号" ( 加入 "," 是为了便于格式化输出 )
-                String id = info[0] + "," +  info[1];
-                if ( !firstMap.containsKey(id) ) { // 检查航班记录是否已使用
+                String id = info[0] + "," + info[1];
+                if (!firstMap.containsKey(id)) { // 检查航班记录是否已使用
                     firstMap.put(id, info[2]);
                 }
             }
 
             /* 航班改签表 */
 
-            int M = Integer.parseInt( scanner.next() );
+            int M = Integer.parseInt(scanner.next());
             Map<String, String> secondMap = new LinkedHashMap<String, String>();
             for (int i = 0; i < M; i++) {
                 // Sample: CZ7132,A1,CZ7156,A2
@@ -52,8 +52,8 @@ public class Main_3 {
                 // 同时操作：
                 // 在原始航班表中移除需要改签的条目，
                 // 同时把移除项中的客户赋值给新记录 (改签记录)
-                String id = info[0] + "," +  info[1];
-                if ( !firstMap.containsKey(id) ) { // 检查是否存在该航班记录
+                String id = info[0] + "," + info[1];
+                if (!firstMap.containsKey(id)) { // 检查是否存在该航班记录
                     String name = firstMap.get(id);
                     firstMap.remove(id);
                     secondMap.put(info[2] + "," + info[3], name);

@@ -27,18 +27,18 @@ import java.util.Scanner;
  */
 public class Main_1 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner( System.in );
+        Scanner scanner = new Scanner(System.in);
 
         // 测试用例：
         // A={1,3,5}, B={2,4,6},R=1
         // A ={ 1,3 , 5 } , B= { 2,4 , 6 } ,R = 1
         // A ={ 1,3 , 5,7 } , B= { 2,4 , 6,10 } ,R = 1
 
-        String src =  scanner.nextLine();
-        String[]  inputStr = null;
-        List<Integer>[] inputNum  = new List[3];
+        String src = scanner.nextLine();
+        String[] inputStr = null;
+        List<Integer>[] inputNum = new List[3];
 
-        if ( null != src && !"".equals(src) ) {
+        if (null != src && !"".equals(src)) {
             inputStr = getStrVarables(src);
             for (int i = 0; i < inputStr.length; i++) {
                 inputNum[i] = getIntVarables(inputStr[i]);
@@ -53,12 +53,12 @@ public class Main_1 {
 
         Integer R = list[2].get(0);
         Integer min = Integer.MAX_VALUE, pos = 0;
-        Boolean swi  = false;
+        Boolean swi = false;
 
         for (int i = 0; i < list[0].size(); i++) { // A
             for (int j = 0; j < list[1].size(); j++) { // B
-                if ( list[1].get(j) >= list[0].get(i)  ) { // Bj <= Ai
-                    if ( (list[1].get(j) - list[0].get(i)) <= R ) {
+                if (list[1].get(j) >= list[0].get(i)) { // Bj <= Ai
+                    if ((list[1].get(j) - list[0].get(i)) <= R) {
                         // Ai，Bj 距离小于等于 R
                         System.out.print("(" + list[0].get(i) + "," + list[1].get(j) + ")");
                         // 找到了直接跳出继续下一个 Ai
@@ -66,7 +66,7 @@ public class Main_1 {
                     } else {
                         // 如果 Ai 找不到 R 范围内的 Bj，则列出距它最近的一个 Bj
                         Integer tmp = 0;
-                        if ( (tmp = list[1].get(j) - list[0].get(i)) < min ) {
+                        if ((tmp = list[1].get(j) - list[0].get(i)) < min) {
                             swi = true;
                             min = tmp;
                             pos = j;
@@ -77,7 +77,7 @@ public class Main_1 {
                 }
             }
 
-            if ( swi ) {
+            if (swi) {
                 System.out.print("(" + list[0].get(i) + "," + list[1].get(pos) + ")");
             }
 
@@ -87,6 +87,7 @@ public class Main_1 {
     /**
      * 根据输入集的字符串，导出 A, B, R 变量集的字符串
      * 例如："A={1,3,5},B={2,4,6},R=1" --> "1,3,5},2,4,6},1" --> {"1,3,5", "2,4,6", "1"}
+     *
      * @param str 未经格式化的输入集字符串
      * @return A, B, R 变量集的字符串
      */
@@ -104,6 +105,7 @@ public class Main_1 {
 
     /**
      * 标准化变量集 (整型数组储存起来)，例如: 3,4,5 --> {3, 4, 5}
+     *
      * @param str 变量集字符串数组，例如：{"1,3,5", "2,4,6", "1"}
      * @return 变量集整型 List
      */
@@ -115,7 +117,7 @@ public class Main_1 {
         List<Integer> list = new ArrayList<>();
 
         for (int i = 0; i < tmp.length; i++) {
-            list.add( Integer.parseInt(tmp[i].trim()) );
+            list.add(Integer.parseInt(tmp[i].trim()));
         }
 
         return list;
