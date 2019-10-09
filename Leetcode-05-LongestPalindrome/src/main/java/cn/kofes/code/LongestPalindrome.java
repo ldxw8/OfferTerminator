@@ -1,5 +1,19 @@
 package cn.kofes.code;
 
+/**
+ * <pre>
+ * author: Kofe
+ * blog  : https://www.kofes.cn
+ * time  : 2019/10/09
+ * desc  :
+ * ==============================================
+ * Leetcode-05-最长回文字符串
+ * https://leetcode-cn.com/problems/longest-palindromic-substring/
+ * ==============================================
+ * 给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。
+ * ==============================================
+ * </pre>
+ */
 public class LongestPalindrome {
 
     public String longestPalindrome(String s) {
