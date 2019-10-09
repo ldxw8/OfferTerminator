@@ -13,19 +13,22 @@ public class LongestPalindrome {
             } else {
 
                 for (int i = 0; i < s.length() - 1; i++) {
+
+                    // 奇数对称探索
                     int former = isPalindrome(s, i, i);
+                    // 偶数对称探索
                     int latter = isPalindrome(s, i, i+1);
 
-                    if ( former != 0 ||  latter != 0 ) {
+                    if ( former != 0 ||  latter != 0 ) {    // 奇或偶对称
                         String tmp = (former > latter)?getPalindrome(s, i, i):getPalindrome(s, i, i+1);
-                        if ( null == maxStr  ) {
+                        if ( null == maxStr  ) { // 第一次探索
                             maxStr = tmp;
-                        } else {
+                        } else { // 第 2.. (length -1) 次探索
                             if ( tmp.length() >= maxStr.length() ) {
                                 maxStr = tmp;
                             }
                         }
-                    } else {
+                    } else { // 没有对称关系 ( 此次探索没有发现回文串 )
                         continue;
                     }
                 }
