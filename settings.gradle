@@ -12,4 +12,5 @@ include 'Leetcode-03-LongestSubstringLength'
 include 'Leetcode-03-LongestSubStrLength'
 include 'LongestPalindrome'
 include 'Leetcode-05-LongestPalindrome'
+include 'Leetcode-09-PalindromeNum'
 
