@@ -10,4 +10,6 @@ include 'Netease-921-RDDeveloper'
 include 'Leetcode-01-TwoSum'
 include 'Leetcode-03-LongestSubstringLength'
 include 'Leetcode-03-LongestSubStrLength'
+include 'LongestPalindrome'
+include 'Leetcode-05-LongestPalindrome'
 
